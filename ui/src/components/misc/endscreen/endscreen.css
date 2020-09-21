@@ -1,0 +1,60 @@
+.escreen-wrapper {
+    margin: 0px auto;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-repeat: repeat;
+    padding: 1em 1em;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+.tagline{
+    line-height: 1.3em;
+}
+.ss-info{
+    max-width: 700px;
+}
+.escreen-wrapper .hero img{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgb(192, 186, 186);
+    max-width: 600px;
+}
+.escreen-wrapper .tagline{
+    text-align: center;
+    font-size: 1.3em;
+    padding: 0.5em;
+}
+.escreen-wrapper .e-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.escreen-wrapper .e-actions .e-action
+{
+    padding: 0.3em 1em;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    background: black;
+    color: wheat;
+    cursor: pointer;
+}
+
+.es-contact{
+    line-height: 1.2em;
+    margin: 0.2em;
+}
+.es-contact-info{
+    padding: 1em;
+}
+.es-contact-adr{
+    font-weight: bold;
+    margin-top: 0.5em;
+}

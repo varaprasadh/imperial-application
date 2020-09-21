@@ -1,0 +1,23 @@
+.btn-wrapper,
+.btn-extra
+{
+    display: flex;
+    align-items: center;
+}
+.btn-wrapper{
+    margin-top: 1em;
+}
+
+
+
+.btn-content-wrapper {
+    padding: 0.3em 1em;
+    background: black;
+    color: white;
+    border-radius: 0.3em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+.btn-extra-text{
+    margin-top: -4px;
+}

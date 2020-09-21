@@ -1,0 +1,93 @@
+.app-from{
+    /* background: lightblue; */
+    user-select: none;
+}
+.form-nav{
+    z-index: 99;
+    position: absolute;
+    padding: 0.5em;
+    background: white;
+    box-shadow: 0px 2px 3px rgb(219, 217, 217);
+    width: 100%;
+    box-sizing: border-box;
+}
+.form-nav .nav-logo img {
+    width: 150px;
+    height: 25px;
+}
+
+@media screen and (min-width:600px){
+    .form-nav .nav-logo img{
+        width: 300px;
+        height: 50px;
+    }
+}
+
+.app-controls{
+    position: absolute;
+    display: flex;
+    bottom: 0.8em;
+    left: 50%;
+    transform: translateX(-50%);   
+}
+.app-controls button{
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    background: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    user-select: none;
+    font-size: 1.2em;
+}
+.app-action{
+    user-select: none;
+
+}
+.app-action-icon{
+    padding: 0em 0.5em;
+}
+
+
+.snake-wrapper{
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.snake-wrapper .snake-content{
+    padding: 0.5em 1em;
+    background: tomato;
+    color: white;
+}
+.loader-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(5, 0, 0, 0.637);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+.loader-card{
+    padding: 1em;
+    background: white;
+    max-width: 500px;
+    text-align: center;
+    line-height: 1.3em;
+    border-radius: 5px;
+    margin: 1em;
+}
+.loading-indicators{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}

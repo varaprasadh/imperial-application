@@ -1,0 +1,83 @@
+.dropdown-wrapper{
+    padding: 1em 0em;
+}
+
+.dd_input_wrapper{
+    display: flex;
+    width: 100%;
+}
+.dd_input_container{
+  flex: 1;
+}
+.dd-input_action_button{
+    width: 25px;
+}
+.dd_input{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    color: rgb(0, 0, 0);
+    -webkit-appearance: none;
+    transform: translateZ(0px);
+    font-size: 30px;
+    -webkit-font-smoothing: antialiased;
+    line-height: unset;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px;
+    padding: 0px 24px 8px 0px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0px;
+    background: none;
+    transition: box-shadow 0.1s ease-out 0s;
+}
+.dd_input_wrapper.focus {
+    border-bottom: 2px solid black;
+}
+.dd_options{
+    max-height:12em;
+    overflow-y: scroll;
+    /* position: relative; */
+}
+.dd_options_wrapper{
+    position: relative;
+    padding: 0.5em 0em;
+    margin-top: 1em;
+    border-top: 2px dotted black;
+    border-bottom: 2px dotted black;
+}
+
+.dd_option{
+    display: flex;
+    align-items: center;
+    padding: 0.3em;
+    background: rgb(228, 227, 225);
+    margin: 0.2em;
+    border-radius: 0.2em;
+    border: 1px solid rgb(182, 170, 170);
+    cursor: pointer;
+}
+.dd-input_action_button{
+    cursor: pointer;
+    width: 2em;
+    z-index:10;
+}
+.dd_icon.cancel{
+    display: block;
+    cursor: pointer;
+}
+
+
+
+.dd_warning{
+    color: rgb(230, 48, 16);
+    padding: 0.5em 0em;
+}
+
+@media screen and (max-width:600px) {
+    .dd_input {
+        font-size: 1.2em;
+    }
+}

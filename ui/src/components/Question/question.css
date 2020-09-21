@@ -1,0 +1,142 @@
+:root{
+    --animation_duration:400ms;
+    --vibrate-dx:10px;
+}
+.q-extras{
+    display: flex;
+}
+
+.question-wrapper{
+    max-width: 600px;
+    padding: 0.7em;
+    line-height: 1.5em;
+    margin: 0px auto;
+}
+.m-req{
+    position: relative;
+}
+.m-req::before{
+    content: "*";
+    display: block;
+    color: rgb(199, 30, 0);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.question-main{
+     
+      display: flex;
+}
+.question-markdown-wrapper{
+    /* display: flex; */
+    align-items: flex-start;
+}
+.sn-wrapper{
+    display: flex;
+    align-items: center;
+    margin:0em  1em;
+}
+.sn-wrapper .sn{
+    margin-top: -0.3em;
+    margin-right: 0.2em;
+}
+.markdown-content{
+    max-width: 500px;
+}
+.question-actions{
+    display: flex;
+}
+p{
+    margin: 0px;
+}
+h3{
+    margin: 0px;
+}
+
+
+
+.slide-up-enter,
+.slide-up-appear {
+    transform: translateY(100%);
+    opacity:0;
+}
+
+.slide-up-enter-active,
+.slide-up-appear-active{
+    transform: translateY(0%);
+    opacity: 1;
+    transition: transform var(--animation_duration) ease-in-out,
+                opacity var(--animation_duration) ease-in-out;
+}
+
+.slide-up-exit {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.slide-up-exit-active {
+    transform: translateY(-100%);
+    transition: transform var(--animation_duration) ease-in-out,
+                opacity var(--animation_duration) ease-in-out;
+    opacity: 0;
+}
+
+.slide-down-enter,
+.slide-down-appear {
+    transform: translateY(-100%);
+    opacity:0;
+}
+
+.slide-down-enter-active,
+.slide-down-appear-active{
+    transform: translateY(0%);
+    opacity: 1;
+    transition: transform var(--animation_duration) ease-in-out,
+                opacity var(--animation_duration) ease-in-out;
+}
+
+.slide-down-exit {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.slide-down-exit-active {
+    transform: translateY(100%);
+    transition: transform var(--animation_duration) ease-in-out,
+                opacity var(--animation_duration) ease-in-out;
+    opacity: 0;
+}
+.error-vibrate{
+    animation:  vibrate 700ms linear 1;
+}
+
+.error-display{
+  color: tomato; 
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+.error-display.show{
+    opacity: 1;
+}
+
+
+@keyframes vibrate{
+    0%{
+      transform: translateX(0px);
+    }
+    25%{
+      transform: translateX(10px);
+
+    }
+    50%{
+      transform: translateX(-10px);
+
+    }
+    75%{
+      transform: translateX(10px);
+
+    }
+    100%{
+      transform: translateX(0px);
+
+    }
+}

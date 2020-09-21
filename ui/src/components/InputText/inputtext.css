@@ -1,0 +1,33 @@
+.input-text-wrapper{
+     padding: 1em 0em;
+}
+
+.input{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    color: rgb(0, 0, 0);
+    -webkit-appearance: none;
+    transform: translateZ(0px);
+    font-size: 30px;
+    -webkit-font-smoothing: antialiased;
+    line-height: unset;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px;
+    padding: 0px 0px 8px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0px;
+    background: none;
+    transition: box-shadow 0.1s ease-out 0s;
+}
+.input:focus{
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+@media screen and (max-width:600px){
+   .input{
+        font-size:1.2em;
+   }
+}
