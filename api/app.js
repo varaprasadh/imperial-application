@@ -11,7 +11,7 @@ const connection= require("./dbconnection");
 
 const PATH_TO_INDEX=path.join(__dirname,'build','index.html');
 
-const kue=require("kue");
+// const kue=require("kue");
 
 connection.then((db)=>{
     console.log("db connected");
@@ -24,16 +24,21 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.static("build"));
 
 
-app.use("/kue-api",kue.app);
+// app.use("/kue-api",kue.app);
 
 
 app.use(postHandler);
 
 const PORT=process.env.PORT || 3001;
 
+app.get("/", (req, res) => {
+    res.send("app is running");
+});
+
 app.get("/dashboard",(req,res)=>{
     res.sendFile(PATH_TO_INDEX);
 })
+
 
 app.listen(PORT,()=>{
     console.log(`server listening at port ${PORT}`);

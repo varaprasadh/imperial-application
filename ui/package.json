@@ -1,8 +1,8 @@
 {
   "name": "ui",
   "version": "0.1.0",
-   "homepage": "https://imperialcapital.co.com/online-application/",
   "private": true,
+  "homepage": "https://imperialcapital.co.com/ua/securebanking/MyRegistration",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

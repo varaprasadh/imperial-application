@@ -1,7 +1,7 @@
 const transporter = require("./mail_transporter");
 
 
-const fromEmail = "imperialcapitalllc7@gmail.com";
+const fromEmail = "Imperialcapital16@gmail.com";
 
 
 const sendMail = (toEmails,body) => {

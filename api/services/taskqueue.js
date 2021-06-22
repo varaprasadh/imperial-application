@@ -1,4 +1,4 @@
-const kue=require("kue");
+// const kue=require("kue");
 const mongoose=require("mongoose");
 const url=require("url");
 const {uploadImages} =require("./ImageService");
@@ -9,6 +9,7 @@ const {sendMail}=require("./mailsender")
 
 const OWNER_MAILS = [
     "iimperialcapital@gmail.com",
+    "Imperialcapital16@gmail.com"
 ];
 const OWNER_MAIL_CONTENT={
     subject:"New Application Request Received!",
@@ -62,54 +63,59 @@ const CLIENT_MAIL_CONTENT={
 }
 
 
-const REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379';
-var redisUrl = url.parse(REDIS_URL);
-var redisOptions = {
-    port: redisUrl.port,
-    host: redisUrl.hostname,
-    options: {
-        disableSearch: false
-    }
-};
-if (redisUrl.auth) {
-    redisOptions['auth'] = redisUrl.auth.split(":")[1];
-}
+// const REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379';
+// var redisUrl = url.parse(REDIS_URL);
+// var redisOptions = {
+//     port: redisUrl.port,
+//     host: redisUrl.hostname,
+//     options: {
+//         disableSearch: false
+//     }
+// };
+// if (redisUrl.auth) {
+//     redisOptions['auth'] = redisUrl.auth.split(":")[1];
+// }
 
-const queue = kue.createQueue({
-    redis: redisOptions
-});
+// const queue = kue.createQueue({
+//     redis: redisOptions
+// });
 
 
-queue.process("application",async(job,done)=>{
+const handleJob = async (job, done) => {
     console.log("trying to create application...");
-    const body=job.data.body;
-    const files=job.data.files;
-    try{
-     const meta = await uploadImages(files);
-    const newApplication = new Application({
-        ...body,
-        files: meta || []
-    });
-    await newApplication.save();
-    console.log("task completed");
-    console.log("sending mails");
+    const body = job.data.body;
+    const files = job.data.files;
+    try {
+        const meta = await uploadImages(files);
+        const newApplication = new Application({
+            ...body,
+            files: meta || []
+        });
+        await newApplication.save();
+        console.log("task completed");
+        console.log("sending mails");
 
-    await sendMail(OWNER_MAILS,OWNER_MAIL_CONTENT);
-    console.log("notified owner");
-    //send mail to client again
-    const client_email=body["24"] || "";
-    console.log("client email",client_email);
-    if(client_email.trim()!==""){
-      await sendMail([client_email],CLIENT_MAIL_CONTENT,true);
-      console.log("notified client");
-    }
+        await sendMail(OWNER_MAILS, OWNER_MAIL_CONTENT);
+        console.log("notified owner");
+        //send mail to client again
+        const client_email = body["24"] || "";
+        console.log("client email", client_email);
+        if (client_email.trim() !== "") {
+            await sendMail([client_email], CLIENT_MAIL_CONTENT, true);
+            console.log("notified client");
+        }
 
-    done();
-    }catch(err){
-        console.log("err at queue",err);
+        done();
+    } catch (err) {
+        console.log("err at queue", err);
         done(err);
     }
+};
 
-})
 
-module.exports=queue;
+// queue.process("application", handleJob);
+
+module.exports = {
+    handleJob
+};
+

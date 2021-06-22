@@ -56,5 +56,15 @@
 }
 .es-contact-adr{
     font-weight: bold;
+    margin: 0.5em 0;
+}
+
+.line-bold{
+    font-weight: bold;
+}
+.note{
+    padding: 1em;
+}
+.note .info > div{
     margin-top: 0.5em;
 }

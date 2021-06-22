@@ -29,7 +29,7 @@ function FileUpload({value=null,onChange}) {
     const [showSnack, setShowSnack] = useState(false);
 
     useEffect(()=>{
-      console.log(file);
+       onChange && onChange(file);
     },[file]);
     function _onChange(e){
       const file = e.target.files[0];

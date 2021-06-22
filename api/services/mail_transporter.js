@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 let account = {
-    user: "imperialcapitalllc7@gmail.com",
+    user: "Imperialcapital16@gmail.com",
     pass: "Timothy@1990"
 };
 

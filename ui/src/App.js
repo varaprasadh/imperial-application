@@ -22,12 +22,15 @@ import Axios from "axios";
 
 
 if (process.env.NODE_ENV === "production"){
-    Axios.defaults.baseURL = "ADD_BASE_URL";
+  Axios.defaults.baseURL = "https://imperial-capital.herokuapp.com";
 }else{
     Axios.defaults.baseURL = "http://localhost:3001";
 }
 
-function RenderFormRoot(props){
+function RenderFormRoot(props){  
+  // return (<StartScreen {...props} />)
+  // return (<EndScreen {...props} />)
+  
   if(props.screen==="start"){
     return (<StartScreen {...props}/>)
   }
@@ -45,7 +48,7 @@ function App(){
       const history=useHistory();
       return (
         <div className="app">
-         <Router history={history} basename="/online-application/">
+          <Router history={history} basename="/ua/securebanking/MyRegistration/">
            <Switch>
               <Route path="/" exact>
                   <RenderFormRoot 

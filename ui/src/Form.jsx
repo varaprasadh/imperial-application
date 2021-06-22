@@ -189,7 +189,7 @@ function Form ({onSubmitSuccess}){
               <Loader show={loader} progress={uploadProgress}/>
                 <div className="form-nav">
                     <div className="nav-logo">
-                       #app
+                       <img src={form_nav_logo} alt="imperial capital"/>
                     </div>
                 </div>
                 <FullScreen ref={gestureView}>
